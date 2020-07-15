@@ -14,42 +14,75 @@ pub mod nr;
 #[inline(always)]
 pub unsafe fn syscall0(n: usize) -> usize {
     let ret: usize;
-    asm!("syscall", in("rax") n, out("rcx") _, lateout("rax") ret);
+    asm!("syscall",
+        in("rax") n,
+        out("rcx") _,
+        lateout("rax") ret);
     ret
 }
 
 #[inline(always)]
 pub unsafe fn syscall1(n: usize, a1: usize) -> usize {
     let ret: usize;
-    asm!("syscall", in("rax") n, in("rdi") a1, out("rcx") _, lateout("rax") ret);
+    asm!("syscall",
+        in("rax") n,
+        in("rdi") a1,
+        out("rcx") _,
+        lateout("rax") ret);
     ret
 }
 
 #[inline(always)]
 pub unsafe fn syscall2(n: usize, a1: usize, a2: usize) -> usize {
     let ret: usize;
-    asm!("syscall", in("rax") n, in("rdi") a1,in("rsi") a2, out("rcx") _, lateout("rax") ret);
+    asm!("syscall",
+        in("rax") n,
+        in("rdi") a1,
+        in("rsi") a2,
+        out("rcx") _,
+        lateout("rax") ret);
     ret
 }
 
 #[inline(always)]
 pub unsafe fn syscall3(n: usize, a1: usize, a2: usize, a3: usize) -> usize {
     let ret: usize;
-    asm!("syscall", in("rax") n, in("rdi") a1,in("rsi") a2, in("rdx") a3,out("rcx") _, lateout("rax") ret);
+    asm!("syscall",
+        in("rax") n,
+        in("rdi") a1,
+        in("rsi") a2,
+        in("rdx") a3,
+        out("rcx") _,
+        lateout("rax") ret);
     ret
 }
 
 #[inline(always)]
 pub unsafe fn syscall4(n: usize, a1: usize, a2: usize, a3: usize, a4: usize) -> usize {
     let ret: usize;
-    asm!("syscall", in("rax") n, in("rdi") a1,in("rsi") a2, in("rdx") a3,in("r10") a4,out("rcx") _, lateout("rax") ret);
+    asm!("syscall",
+        in("rax") n,
+        in("rdi") a1,
+        in("rsi") a2,
+        in("rdx") a3,
+        in("r10") a4,
+        out("rcx") _,
+        lateout("rax") ret);
     ret
 }
 
 #[inline(always)]
 pub unsafe fn syscall5(n: usize, a1: usize, a2: usize, a3: usize, a4: usize, a5: usize) -> usize {
     let ret: usize;
-    asm!("syscall", in("rax") n, in("rdi") a1,in("rsi") a2, in("rdx") a3,in("r10") a4, in("r8") a5,out("rcx") _, lateout("rax") ret);
+    asm!("syscall",
+        in("rax") n,
+        in("rdi") a1,
+        in("rsi") a2,
+        in("rdx") a3,
+        in("r10") a4,
+        in("r8") a5,
+        out("rcx") _,
+        lateout("rax") ret);
     ret
 }
 
@@ -64,6 +97,15 @@ pub unsafe fn syscall6(
     a6: usize,
 ) -> usize {
     let ret: usize;
-    asm!("syscall", in("rax") n, in("rdi") a1,in("rsi") a2, in("rdx") a3,in("r10") a4, in("r8") a5, in("r9") a6,out("rcx") _, lateout("rax") ret);
+    asm!("syscall",
+        in("rax") n,
+        in("rdi") a1,
+        in("rsi") a2,
+        in("rdx") a3,
+        in("r10") a4,
+        in("r8") a5,
+        in("r9") a6,
+        out("rcx") _,
+        lateout("rax") ret);
     ret
 }
